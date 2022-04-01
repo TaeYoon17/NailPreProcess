@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31424.327
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NailPreProcess", "NailPreProcess.csproj", "{D03A1C63-1519-41CA-8531-7BB49C23A227}"
-EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "NailCrawling", "NailCrawling\NailCrawling.pyproj", "{DA42D360-DF82-4B3E-A26C-0DBCD881F520}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +15,6 @@ Global
 		{D03A1C63-1519-41CA-8531-7BB49C23A227}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D03A1C63-1519-41CA-8531-7BB49C23A227}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D03A1C63-1519-41CA-8531-7BB49C23A227}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DA42D360-DF82-4B3E-A26C-0DBCD881F520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DA42D360-DF82-4B3E-A26C-0DBCD881F520}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
