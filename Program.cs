@@ -10,14 +10,17 @@ namespace NailPreProcess
         {
             try
             {
-                Console.Write("lable 이름: ");
-                string label = Console.ReadLine();
-                if (label == "" || label == null) throw new Exception("isNull!");
-                string Path = @"C:\Users\MY_PC\Desktop\DataSet\RawDataSet\" + label;
-                string newPath = @"C:\Users\MY_PC\Desktop\DataSet\CropDataSet\" + label;
-                CropDirectories directories = new(label);
-                directories.Add_SubDirectory(Path, newPath);
-                directories.Run();
+                string[] labels = { "sixthDay", "seventhDay" };
+                
+                foreach (string label in labels)
+                {
+                    Console.WriteLine(label);
+                    string Path = @"C:\Users\GVR_LAB\Desktop\NailCrawling\RawDataSet\" + label;
+                    string newPath = @"C:\Users\GVR_LAB\Desktop\NailCrawling\CropDataSet\" + label;
+                    CropDirectories directories = new(label);
+                    directories.Add_SubDirectory(Path, newPath);
+                    directories.Run();
+                }
             }
             catch (Exception ex)
             {

@@ -37,7 +37,7 @@ def imgCrawling(driver,dirNumber,label):
                 break
         last_height = new_height
     imgs = driver.find_elements_by_css_selector(".rg_i.Q4LuWd")
-    dir = "./DataSet/"+label+"/url"+str(dirNumber)
+    dir = "C:\\Users\\GVR_LAB\\Desktop\\NailCrawling\\RawDataSet\\"+label+"/url"+str(dirNumber)
     createDirectory(dir) #폴더 생성
     Max=250
     for i,img in enumerate(imgs):
@@ -48,7 +48,7 @@ def imgCrawling(driver,dirNumber,label):
             '//*[@id="Sva75c"]/div/div/div[3]/div[2]/c-wiz/div/div[1]/div[1]/div[2]/div/a/img').get_attribute(
             "src")
             if imgUrl[:5]=="https":
-                path = "C:\\Users\\GVR_LAB\\Desktop\\NailCrawling\\"+dir+"\\"
+                path = dir+"\\"
                 urllib.request.urlretrieve(imgUrl, path+str(i)+".jpg")
             else: i-=1
         except:

@@ -1,15 +1,16 @@
 {
     "urls":
     {
-        "fourthDay":["https://i0.wp.com/forcreativejuice.com/wp-content/uploads/2016/02/purple-nail-designs/8-purple-nail-art-designs.jpg?w=600&ssl=1",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpEWWWUnue__QOtfc2uTzZEtPFdGP4oLB5mg&usqp=CAU",
-        "http://notedlist.com/wp-content/uploads/2015/08/butterfly-nail-art-designs/20-butterfly-nail-art-designs.jpg",
-        "https://www.stylemotivation.com/wp-content/uploads/2014/03/24-Beautiful-Purple-Nail-Art-Ideas-5.jpg",
-        "https://www.google.com/search?q=nail+art+purple&tbm=isch&ved=2ahUKEwi6x6Xwhuv2AhVMfpQKHWgtCqsQ2-cCegQIABAA&oq=nail+art+purple&gs_lcp=CgNpbWcQAzIECAAQEzIECAAQEzIECAAQEzIECAAQEzIECAAQEzIECAAQEzIECAAQEzIECAAQEzIECAAQEzIECAAQEzoFCAAQgAQ6BAgAEB5Q6gRYwhtgsRxoAHAAeACAAZECiAG6CJIBBTAuNi4xmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=lddCYvqoEMz80QTo2qjYCg&bih=692&biw=1054#imgrc=LRoNyv4og0lcsM"
+        "eightsDay":[
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9IoCTVigDZl65pBZ8DbuzupRNrZ8m9vRgHg&usqp=CAU",
+            "https://cdn.shopify.com/s/files/1/1833/5737/files/lADPDgQ9rJhD0T_NAu_NAjQ_564_751.jpg_620x10000q90g_large.jpg?v=1571999381",
+            "https://www.hotbeautyhealth.com/wp-content/uploads/2014/06/summer-nail-art-04.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEHYs_8uUdyhA3h9si6MR_R3I2yyr_1U0vEQ&usqp=CAU",
+            "http://www.gazzed.net/wp-content/uploads/Roe-gold-summer-nail-art-1024x1024.jpg"
         ]
     },
  "crawled":{
-     "day1":[
+     "fistDay":[
          "https://haileyfashionlife.com/wp-content/uploads/2022/01/30-Cute-valentines-nails-with-nails-art-ideas-2022-8.jpg",
          "https://cairowestmag.com/wp-content/uploads/2021/03/104707423_612373379386078_5646304101549916477_n-1-e1604332346896-681x450.jpg",
          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq0jazlDgG70FmQqcn_Pg59lPWiPcle-9ktQ&usqp=CAU",
@@ -17,18 +18,44 @@
          "https://media.allure.com/photos/6058e5536b81f2961ddb93b6/16:9/w_2580,c_limit/spring%202021%20nail%20art%20ideas.jpg",
          "https://www.stylist.co.uk/images/app/uploads/2020/12/18091057/christmas-nail-art-2020-crop-1638791022-1080x1080.jpg?w=1200&h=1&fit=max&auto=format%2Ccompress"
         ],
-        "day2":[
+        "SecondDay":[
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnvx08Sk9qMd8SqbLtdpnzW1nmRidZ3610ow&usqp=CAU",
             "https://youthincmag.com/wp-content/uploads/2017/08/6-min.jpg",
             "https://assets.vogue.in/photos/5ce4358eb80311fc4b8f7abb/master/w_649,h_650,c_limit/easy-nail-art-design-vogue-india-15.jpg",
             "https://i.pinimg.com/originals/45/ea/f2/45eaf20dc54fd16aa3346dc0c960a449.jpg"
         ],
-        "day3":[
+        "thirdDay":[
             "https://i0.wp.com/forcreativejuice.com/wp-content/uploads/2016/02/26-black-nail-art-designs.jpg?fit=600%2C600&ssl=1",
         "https://i.pinimg.com/originals/01/5c/9c/015c9cedbacb016fd0589903000f1e39.jpg",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnK-IKRFJHP7d_WAa-cbZso2g9CRefhNoVYg&usqp=CAU",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf8ys0axcQDZKWz6h_6KpmR4_r1QBdRIF_cQ&usqp=CAU",
         "http://file3.instiz.net/data/cached_img/upload/2019/04/17/20/ea34c77db06f06cac3f7e5224117198c.jpg"
+        ]
+        ,"fourthDay":["https://i0.wp.com/forcreativejuice.com/wp-content/uploads/2016/02/purple-nail-designs/8-purple-nail-art-designs.jpg?w=600&ssl=1",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpEWWWUnue__QOtfc2uTzZEtPFdGP4oLB5mg&usqp=CAU",
+            "http://notedlist.com/wp-content/uploads/2015/08/butterfly-nail-art-designs/20-butterfly-nail-art-designs.jpg",
+            "https://www.stylemotivation.com/wp-content/uploads/2014/03/24-Beautiful-Purple-Nail-Art-Ideas-5.jpg",
+            "https://www.google.com/search?q=nail+art+purple&tbm=isch&ved=2ahUKEwi6x6Xwhuv2AhVMfpQKHWgtCqsQ2-cCegQIABAA&oq=nail+art+purple&gs_lcp=CgNpbWcQAzIECAAQEzIECAAQEzIECAAQEzIECAAQEzIECAAQEzIECAAQEzIECAAQEzIECAAQEzIECAAQEzIECAAQEzoFCAAQgAQ6BAgAEB5Q6gRYwhtgsRxoAHAAeACAAZECiAG6CJIBBTAuNi4xmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=lddCYvqoEMz80QTo2qjYCg&bih=692&biw=1054#imgrc=LRoNyv4og0lcsM"
+        ],"fifthDay":[
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSskV8vn8TKL62xfUDoNvUqKdY3lR5HBpQyWQ&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWIV8dB6laaHairuRoKWfJBSqK90V5MYVRng&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKvHByomttF-Cju4kaZ-WnazC33C99NIE35oqnEWQtVka7MLwrTolUqODkrj3R4XrZzlM&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5pz052ID1keJKN8j1eJo9zffwJIr3pelRFQ&usqp=CAU",
+            "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Fblog%2F262BCF415726E97208"
+        ],
+        "sixthDay":[
+            "https://i.pinimg.com/564x/51/39/5a/51395a14b2e260e3d5fa1dffe7870569.jpg",
+            "https://www.askideas.com/media/75/Blue-And-White-Polka-Dots-Nail-Art-Design1.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrZZB10kouwtfP6Nju1KHCPQ0ZpUv3aAskKQ&usqp=CAU",
+            "https://stylesweekly.com/wp-content/uploads/2016/03/nail-25.jpg"
+        ],
+        "seventhDay" : [
+            "https://shinecoco.com/wp-content/uploads/2020/08/ana0m.jpg",
+            "https://i.pinimg.com/originals/8b/cc/8d/8bcc8d9dcc7ae9960b376f159768ffb4.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT6ZyVwXYfN8M4kyhtyk58DwAVkyBVQJHRFAUvDY9UsNs4aeYQ9expPXrysluLCUFuI_I&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDY20NWlO3TNhW1AwbumhE82bBoz1r6fEXO60bWcKeF-P9q79PChtmwwws7X3UOj-1ijQ&usqp=CAU",
+            "https://i.pinimg.com/originals/a8/1a/67/a81a67bdee7b99b46cf6ff2a587f35a5.jpg",
+            "https://easyday.snydle.com/files/2014/03/simple-pink-nail-designs.jpg"
         ]
     }
 }

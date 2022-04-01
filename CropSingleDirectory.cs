@@ -31,13 +31,17 @@ namespace CropFiles
                 string[] files = Directory.GetFiles(rawPath, "*.jpg");
                 foreach ((string value, int index) fileItem in files.Select((value, index) => (value, index)))
                 {
-                    string? file = fileItem.value;
+                    try{
+                    string file = fileItem.value;
                     int index = fileItem.index;
                     Mat src = Cv2.ImRead(file, ImreadModes.Unchanged);
                     Mat dst = new(new OpenCvSharp.Size(1, 1), MatType.CV_8UC3);
-                    Cv2.Resize(src, dst, new OpenCvSharp.Size(256, 256), 0, 0);
+                    Cv2.Resize(src, dst, new OpenCvSharp.Size(416, 416), 0, 0);
 
                     Cv2.ImWrite($"{newPath}\\{labelName}_{number}_{index}.jpg", dst);
+                    }
+                    catch
+                    {                    }
                 }
                 Cv2.WaitKey(0);
             }
