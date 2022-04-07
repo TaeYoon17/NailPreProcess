@@ -129,9 +129,11 @@ namespace ImageManipulateion
             if (perform == null) Console.WriteLine("실행할 delegate가 설정 안 됨");
             List<Thread> threads = new();
             foreach ((PathStruct value, int index) directory in directories.Select((value, index) => (value, index)))
-            {
+            {//수정 필요 사항
                 Thread t = new Thread(threadRun);
                 t.Start(new thParam(directory.value,directory.index));
+                ThreadPool.QueueUserWorkItem(threadRun,
+                    new thParam(directory.value, directory.index));
                 threads.Add(t);
             }
             threads.ForEach(v => v.Join());
