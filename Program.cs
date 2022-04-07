@@ -15,8 +15,8 @@ namespace NailPreProcess
                 foreach (string label in labels)
                 {
                     Console.WriteLine(label);
-                    string Path = @"C:\Users\kim05\OneDrive - Sejong University\연구실\랩미팅\03_31\" + label;
-                    string newPath = @"C:\Users\kim05\Desktop\실험 폴더\" + label;
+                    string Path = @"C:\Users\MY_PC\Desktop\NailCrawling\DataSet" + label;
+                    string newPath = @"C:\Users\MY_PC\Desktop\NailCrawling\cropDataSet" + label;
                     Directories directories = new(label);
                     directories.Add_SubDirectory(Path, newPath);
                     directories.Crop();
@@ -28,7 +28,6 @@ namespace NailPreProcess
             }
             Console.WriteLine("종료하려면 아무 키나 누르세요...");
             Console.ReadKey();
-
         }
     }
 }

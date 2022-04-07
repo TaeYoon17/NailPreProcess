@@ -5,6 +5,7 @@ using System;
 using System.IO;
 using System.Threading;
 using System.Linq;
+using System.Threading.Tasks;
 namespace ImageManipulateion
 {
     public struct PathStruct
@@ -39,7 +40,7 @@ namespace ImageManipulateion
                     Mat src = Cv2.ImRead(file, ImreadModes.Unchanged);
                     Mat dst = new(new OpenCvSharp.Size(1, 1), MatType.CV_8UC3);
                     Cv2.Resize(src, dst, new OpenCvSharp.Size(416, 416), 0, 0);
-
+                    Console.WriteLine("IndexNumber"+index);
                     Cv2.ImWrite($"{newPath}\\{labelName}_{number}_{index}.jpg", dst);
                     }
                     catch
@@ -110,33 +111,16 @@ namespace ImageManipulateion
                 Add(new PathStruct(s, newPath));
             }
         }
-        private void threadRun(object ThreadParam)
-        {
-            thParam param= (thParam)ThreadParam;
-            perform(param.directory, param.index, label);
-        }
-        struct thParam
-        {
-            public PathStruct directory;
-            public int index;
-            public thParam(PathStruct d,int i)
-            {
-                directory = d;index = i;
-            }
-        }
         private void Run()
         {
             if (perform == null) Console.WriteLine("실행할 delegate가 설정 안 됨");
-            List<Thread> threads = new();
+            List<Task> taskList=new List<Task>();
             foreach ((PathStruct value, int index) directory in directories.Select((value, index) => (value, index)))
-            {//수정 필요 사항
-                Thread t = new Thread(threadRun);
-                t.Start(new thParam(directory.value,directory.index));
-                ThreadPool.QueueUserWorkItem(threadRun,
-                    new thParam(directory.value, directory.index));
-                threads.Add(t);
+            {
+                Task task = Task.Factory.StartNew(() =>perform(directory.value, directory.index, label));
+                taskList.Add(task);
             }
-            threads.ForEach(v => v.Join());
+            Task.WaitAll(taskList.ToArray());
         }
         private Queue<string> getSubDirectoriesName(Queue<string> Paths, Queue<string> acc)
         {
