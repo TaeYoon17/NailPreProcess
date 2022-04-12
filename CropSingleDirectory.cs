@@ -64,7 +64,7 @@ namespace ImageManipulateion
                     DirectoryInfo directoryInfo = new DirectoryInfo(newPath);
                     directoryInfo.Create();
                 }
-                string[] files = Directory.GetFiles(rawPath, "*.jpg");
+                List<string> files =new( Directory.GetFiles(rawPath, "*.jpg"));
                 foreach ((string value, int index) fileItem in files.Select((value, index) => (value, index)))
                 {
                     try
@@ -74,8 +74,8 @@ namespace ImageManipulateion
                         Mat src = Cv2.ImRead(file, ImreadModes.Unchanged);
                         Mat dst = new(new OpenCvSharp.Size(1, 1), MatType.CV_8UC3);
                         Cv2.Resize(src, dst, new OpenCvSharp.Size(416, 416), 0, 0);
-
                         Cv2.ImWrite($"{newPath}\\{labelName}_{number}_{index}.jpg", dst);
+                        Console.WriteLine("자르기 완료");
                     }
                     catch
                     { }
@@ -91,25 +91,22 @@ namespace ImageManipulateion
     }
     public class Directories
     {
-        public List<PathStruct> directories;
+        public List<PathStruct> directories= new List<PathStruct>();
         private Perform perform;
         private readonly string label;
         public Directories(string labelName)
         {
-            directories = new List<PathStruct>();
             perform = null;
             this.label = labelName;
         }
         public void Add(PathStruct directory) => directories.Add(directory);
         public void Add_SubDirectory(PathStruct path)=>Add_SubDirectory(path.rawPath,path.rawPath);
-        public void Add_SubDirectory(string rawPath,string newPath)
+        public Directories Add_SubDirectory(string rawPath,string newPath)
         {
             Queue<string> quPath = new Queue<string>(new string[] { rawPath });
             Queue<string> acc = getSubDirectoriesName(quPath, new Queue<string>(quPath));
-            foreach (var s in acc)
-            {
-                Add(new PathStruct(s, newPath));
-            }
+            acc.ToList().ForEach(SubRawPath => Add(new PathStruct(SubRawPath, newPath)));
+            return this;
         }
         private void Run()
         {
