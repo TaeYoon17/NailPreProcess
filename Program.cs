@@ -24,7 +24,9 @@ namespace NailPreProcess
                     string Path=inputPath+label;
                     string newPath=inputNewPath+label;
                     Directories directories = new(label);
+                    //Add_SubDirectory(기존 이미지 폴더, 새로운 이미지 폴더).나머지 전치리 함수 실행()
                     directories.Add_SubDirectory(Path, newPath).Crop();
+                    //directories.Add_SubDirectory(Path, newPath).Reverse();
                 });
             }
             catch (Exception ex)

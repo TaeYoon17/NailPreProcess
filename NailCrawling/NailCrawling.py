@@ -1,6 +1,7 @@
 from urllib import request
 from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 import os
 import asyncio
 import urllib.request
@@ -13,13 +14,14 @@ def createDirectory(directory):
     except OSError:
         print("Error: Failed to create the directory.")
 
-def googleImgEnter(driver,imgURL):
+def GoogleImgEnter(driver,imgURL):
     driver.find_element_by_xpath('//*[@id="sbtc"]/div/div[3]/div[2]').click()
     driver.find_element_by_xpath('//*[@id="Ycyxxc"]').send_keys(imgURL)
     driver.find_element_by_xpath('//*[@id="RZJ9Ub"]').click()
     driver.find_element_by_xpath('//*[@id="rso"]/div[2]/div/div[2]/g-section-with-header/div[1]/title-with-lhs-icon/a').click()
     return
-def imgCrawling(driver,dirNumber,label):
+
+def imgsSelector(driver):
     SCROLL_PAUSE_TIME = 1
     # Get scroll height
     last_height = driver.execute_script("return document.body.scrollHeight")  # 브라우저의 높이를 자바스크립트로 찾음
@@ -37,24 +39,35 @@ def imgCrawling(driver,dirNumber,label):
                 break
         last_height = new_height
     imgs = driver.find_elements_by_css_selector(".rg_i.Q4LuWd")
-    dir = "C:\\Users\\GVR_LAB\\Desktop\\NailCrawling\\RawDataSet\\"+label+"/url"+str(dirNumber)
+    return imgs
+
+def imgDownload(driver,dirNumber,label,imgs):
+    dir = "C:\\Users\\MY_PC\\Desktop\\DataSetCrawl\\RawDataSet\\"+label+"/url"+str(dirNumber)
     createDirectory(dir) #폴더 생성
     Max=250
     for i,img in enumerate(imgs):
         try:
             img.click()
             time.sleep(1)
-            imgUrl = driver.find_element_by_xpath(
-            '//*[@id="Sva75c"]/div/div/div[3]/div[2]/c-wiz/div/div[1]/div[1]/div[2]/div/a/img').get_attribute(
-            "src")
+            imgUrl=driver.find_element(By.XPATH,
+                '/html/body/div[3]/c-wiz/div[3]/div[2]/div[3]/div/div/div[3]/div[2]/c-wiz/div/div[1]/div[1]/div[3]/div/a/img').get_attribute("src")
             if imgUrl[:5]=="https":
                 path = dir+"\\"
                 urllib.request.urlretrieve(imgUrl, path+str(i)+".jpg")
-            else: i-=1
+                print(f"Is Downloaded {i}")
+            else: 
+                i-=1
+                print("Not Downloaded")
         except:
+            print("imgURL Error!!")
             i-=1
             pass
         if i>Max: return
+
+def ImgCrawling(driver,i,label):
+    imgs=imgsSelector(driver)
+    imgDownload(driver,i,label,imgs)
+
 def RunURLs(imgURLs,label=None):
     label,imgURLs=list(imgURLs.items())[0]
     for i,imgURL in enumerate(imgURLs):
@@ -63,8 +76,8 @@ def RunURLs(imgURLs,label=None):
         driver = webdriver.Chrome('chromedriver.exe', options=options)
         driver.implicitly_wait(100)
         driver.get(url)
-        googleImgEnter(driver,imgURL)
-        imgCrawling(driver,i,label)
+        GoogleImgEnter(driver,imgURL)
+        ImgCrawling(driver,i,label)
         driver.close()
 def getURLs():
     import json
